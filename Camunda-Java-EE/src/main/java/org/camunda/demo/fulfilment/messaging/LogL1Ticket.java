@@ -1,4 +1,4 @@
-package org.camunda.demo.SimpleDemo;
+package org.camunda.demo.fulfilment.messaging;
 
 import java.util.logging.Logger;
 
@@ -10,9 +10,9 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
  * illustrating how a Java Delegate can be used 
  * from within a BPMN 2.0 Service Task.
  */
-public class PlanTrip implements JavaDelegate {
+public class LogL1Ticket implements JavaDelegate {
  
-  private final Logger LOGGER = Logger.getLogger(PlanTrip.class.getName());
+  private final Logger LOGGER = Logger.getLogger(LogL1Ticket.class.getName());
   
   public void execute(DelegateExecution execution) throws Exception {
     
@@ -25,11 +25,8 @@ public class PlanTrip implements JavaDelegate {
             + ", executionId=" + execution.getId()
             // print process variables
             + "\n*************************************************"
-            + "\nName: " + execution.getVariable("name")
-            + "\nTemp: " + execution.getVariable("temp") + "°C"
-            + "\nCount: " + execution.getVariable("count")
+            + "\nTicket Desc: " + execution.getVariable("ticketDesc")
             + "\n*************************************************"
-            + "\nHurray! Let's go for picnic."
             + " \n\n");
     
   }
