@@ -1,4 +1,4 @@
-package org.camunda.demo.SimpleDemo;
+package org.camunda.demo.fulfilment;
 
 import java.util.logging.Logger;
 
@@ -10,9 +10,9 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
  * illustrating how a Java Delegate can be used 
  * from within a BPMN 2.0 Service Task.
  */
-public class ShutdownLogger implements JavaDelegate {
+public class DemoLogger implements JavaDelegate {
  
-  private final Logger LOGGER = Logger.getLogger(ShutdownLogger.class.getName());
+  private final Logger LOGGER = Logger.getLogger(DemoLogger.class.getName());
   
   public void execute(DelegateExecution execution) throws Exception {
     
@@ -26,9 +26,8 @@ public class ShutdownLogger implements JavaDelegate {
             // print process variables
             + "\n*************************************************"
             + "\nName: " + execution.getVariable("name")
-            + "\nTemp: " + execution.getVariable("temp") + "°C"
+            + "\nAge: " + execution.getVariable("age")
             + "\n*************************************************"
-            + "\nShutting down FC."
             + " \n\n");
     
   }

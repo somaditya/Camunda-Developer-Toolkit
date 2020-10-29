@@ -1,4 +1,4 @@
-package org.camunda.demo.SimpleDemo;
+package org.camunda.demo.fulfilment;
 
 import java.util.HashMap;
 import java.util.Map;
