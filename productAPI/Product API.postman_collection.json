@@ -18,14 +18,14 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"productName\": \"iPhone\",\n    \"description\": \"Mobile\",\n    \"price\": 65000.00\n}"
+					"raw": "    {\n        \"productName\": \"LeafPod\",\n        \"description\": \"BT earbuds\",\n        \"price\": 60000.00\n    }"
 				},
 				"url": {
-					"raw": "localhost:8080/api/v1/products/",
+					"raw": "localhost:8081/api/v1/products/",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"api",
 						"v1",
@@ -42,16 +42,16 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/api/v1/products/4",
+					"raw": "localhost:8081/api/v1/products/2",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"api",
 						"v1",
 						"products",
-						"4"
+						"2"
 					]
 				}
 			},
@@ -70,14 +70,14 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"productName\": \"PTron\",\n    \"description\": \"Head Phones\",\n    \"price\": 2500.00\n}"
+					"raw": "{\n    \"productName\": \"LeafPod\",\n    \"description\": \"BT earbuds\",\n    \"price\": 2500.00\n}"
 				},
 				"url": {
-					"raw": "localhost:8080/api/v1/products/5",
+					"raw": "localhost:8081/api/v1/products/5",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"api",
 						"v1",
@@ -94,11 +94,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/api/v1/products/",
+					"raw": "localhost:8081/api/v1/products/",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"api",
 						"v1",
