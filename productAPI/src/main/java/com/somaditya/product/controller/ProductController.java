@@ -6,8 +6,10 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.ResourceAccessException;
 
 import javax.validation.Valid;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,15 +42,20 @@ public class ProductController {
         return ResponseEntity.ok(productService.save(product));
     }
     
-    // TODO should update existing record instead of adding new copy
     @PutMapping("/{id}")
-    public ResponseEntity<Product> update(@PathVariable Long id, @Valid @RequestBody Product product) {
-        if (!productService.findById(id).isPresent()) {
-            log.error("ID " + id + "does not exist.");
-            ResponseEntity.badRequest().build();
-        }
+    public ResponseEntity<Product> update(@PathVariable Long id, @Valid @RequestBody Product productUpdate)
+            throws Exception {
+        Product product = productService.findById(id).orElseThrow(() ->
+                new ResourceAccessException("Product with id " + id + " not found!"));
         
-        return ResponseEntity.ok(productService.save(product));
+        product.setProductName(productUpdate.getProductName());
+        product.setDescription(productUpdate.getDescription());
+        product.setPrice(productUpdate.getPrice());
+        product.setUpdatedAt(new Date());
+        
+        final Product updatedProduct = productService.save(product);
+        
+        return ResponseEntity.ok(updatedProduct);
     }
     
     @DeleteMapping("/{id}")
