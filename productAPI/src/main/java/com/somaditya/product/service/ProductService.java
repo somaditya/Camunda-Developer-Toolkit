@@ -12,6 +12,8 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class ProductService {
+
+    @Autowired
     private final ProductRepository productRepository;
     
     public List<Product> findAll() {
@@ -29,4 +31,5 @@ public class ProductService {
     public void deleteById(Long id) {
         productRepository.deleteById(id);
     }
+    
 }
